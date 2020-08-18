@@ -1,4 +1,4 @@
-# legtool_tortoise_robot
+# Tortoise_robot_simulation
 Simulation of tortoise-like robot's gait with inverse kinematics, using gazebo. 
 
 This is a personalized version of 'Legtool'(by jpieper) for analyzing the gait of tortoise-like robot using inverse kinematics.

@@ -1,0 +1,741 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <world name="default">
+   <physics name="default_physics" default="0" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>50</iters>
+          <sor>1.0</sor>
+          <use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
+        </solver>
+      </ode>
+    </physics>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+ <model name="tortoise">
+  <static>false</static>
+<!--body-->
+    <link name="chassis">
+      <pose>0 0 0.400000 0 0 0</pose>
+      <inertial>
+        <mass>1.050000</mass>
+        <inertia>
+          <ixx>0.015162</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.015162</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.015162</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.190000 0.190000 0.034000</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.190000 0.190000 0.034000</size></box></geometry>
+      </visual>
+    </link>
+
+    <link name="belly">
+      <pose>0.000000 0.000000 0.3795000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.100000</mass>
+        <inertia>
+          <ixx>0.000160</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000160</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000160</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="collision">
+        <geometry><sphere><radius>0.05000</radius></sphere></geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry><sphere><radius>0.05000</radius></sphere></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="belly_hinge">
+      <pose>0.000000 0.000000 0.000000 0 0 0</pose>
+      <child>belly</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>1.000000 1.000000 1.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.001</friction></dynamics>
+        <limit>
+          <effort>1.200000</effort>
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+    </joint>
+
+<!--link0-->
+    <link name="coxa0">
+      <pose>0.0950000 0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <!--collision name="collision">
+        <geometry><box><size>0.030000 0.030000 0.035000</size></box></geometry>
+      </collision-->
+      <visual name="visual">
+        <geometry><box><size>0.030000 0.030000 0.035000</size></box></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="coxa_hinge0">
+      <pose>0.000000 0.0000000 0.000000 0 0 0</pose>
+      <child>coxa0</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0.000000 0.000000 1.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="coxa_0_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="femur0">
+      <pose>0.140000 0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <!--collision name="collision">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </collision-->
+      <visual name="visual">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </visual>
+    </link>
+
+    <joint type="revolute" name="femur_hinge0">
+      <pose>-0.030000 0.000000 0.000000 0 0 0</pose>
+      <child>femur0</child>
+      <parent>coxa0</parent>
+      <axis>
+        <xyz>0.000000 1.000000 0.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="femur_0_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="tibia0">
+      <pose>0.200000 0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <!--collision name="collision">
+        <geometry><box><size>0.0350000 0.035000 0.030000</size></box></geometry>
+
+      </collision-->
+      <visual name="visual">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </visual>
+   </link>
+
+    <joint type="revolute" name="tibia_hinge0">
+      <pose>-0.030000 0.000000 0.000000 0 0 0</pose>
+      <child>tibia0</child>
+      <parent>femur0</parent>
+      <axis>
+        <xyz>0.000000 1.000000 0.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="tibia_0_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="tip0">
+      <pose>0.230000 0.095000 0.411000 0 0 0</pose>
+      <inertial>
+        <mass>0.020000</mass>
+        <inertia>
+          <ixx>0.000002</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000002</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000002</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><sphere><radius>0.01500</radius></sphere></geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>3</mu>
+              <mu2>3</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry><sphere><radius>0.01500</radius></sphere></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="tip_hinge0">
+      <pose>0.000000 0.000000 0.000000 0 0 0</pose>
+      <child>tip0</child>
+      <parent>tibia0</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+      </axis>
+    </joint>
+
+<!--link1-->
+    <link name="coxa1">
+      <pose>0.0950000 -0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.030000 0.030000 0.035000</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.030000 0.030000 0.035000</size></box></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="coxa_hinge1">
+      <pose>0.000000 0.0000000 0.000000 0 0 0</pose>
+      <child>coxa1</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0.000000 0.000000 1.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="coxa_1_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="femur1">
+      <pose>0.140000 -0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </visual>
+    </link>
+
+    <joint type="revolute" name="femur_hinge1">
+      <pose>-0.030000 0.000000 0.000000 0 0 0</pose>
+      <child>femur1</child>
+      <parent>coxa1</parent>
+      <axis>
+        <xyz>0.000000 1.000000 0.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="femur_1_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="tibia1">
+      <pose>0.200000 -0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.0350000 0.035000 0.030000</size></box></geometry>
+
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </visual>
+   </link>
+
+    <joint type="revolute" name="tibia_hinge1">
+      <pose>-0.030000 0.000000 0.000000 0 0 0</pose>
+      <child>tibia1</child>
+      <parent>femur1</parent>
+      <axis>
+        <xyz>0.000000 1.000000 0.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="tibia_1_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="tip1">
+      <pose>0.230000 -0.095000 0.411000 0 0 0</pose>
+      <inertial>
+        <mass>0.020000</mass>
+        <inertia>
+          <ixx>0.000002</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000002</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000002</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><sphere><radius>0.01500</radius></sphere></geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>3</mu>
+              <mu2>3</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry><sphere><radius>0.01500</radius></sphere></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="tip_hinge1">+-
+      <pose>0.000000 0.000000 0.000000 0 0 0</pose>
+      <child>tip1</child>
+      <parent>tibia1</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+      </axis>
+    </joint>
+
+<!--link 2-->
+    <link name="coxa2">
+      <pose>-0.0950000 -0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.030000 0.030000 0.035000</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.030000 0.030000 0.035000</size></box></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="coxa_hinge2">
+      <pose>0.000000 0.0000000 0.000000 0 0 0</pose>
+      <child>coxa2</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0.000000 0.000000 1.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="coxa_2_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="femur2">
+      <pose>-0.140000 -0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </visual>
+    </link>
+
+    <joint type="revolute" name="femur_hinge2">
+      <pose>0.030000 0.000000 0.000000 0 0 0</pose>
+      <child>femur2</child>
+      <parent>coxa2</parent>
+      <axis>
+        <xyz>0.000000 -1.000000 0.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="femur_2_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="tibia2">
+      <pose>-0.200000 -0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.0350000 0.035000 0.030000</size></box></geometry>
+
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </visual>
+   </link>
+
+    <joint type="revolute" name="tibia_hinge2">
+      <pose>0.030000 0.000000 0.000000 0 0 0</pose>
+      <child>tibia2</child>
+      <parent>femur2</parent>
+      <axis>
+        <xyz>0.000000 -1.000000 0.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="tibia_2_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="tip2">
+      <pose>-0.230000 -0.095000 0.411000 0 0 0</pose>
+      <inertial>
+        <mass>0.020000</mass>
+        <inertia>
+          <ixx>0.000002</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000002</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000002</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><sphere><radius>0.01500</radius></sphere></geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>3</mu>
+              <mu2>3</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry><sphere><radius>0.01500</radius></sphere></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="tip_hinge2">
+      <pose>0.000000 0.000000 0.000000 0 0 0</pose>
+      <child>tip2</child>
+      <parent>tibia2</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+      </axis>
+    </joint>
+
+<!--link 3-->
+    <link name="coxa3">
+      <pose>-0.0950000 0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.030000 0.030000 0.035000</size></box></geometry>
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.030000 0.030000 0.035000</size></box></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="coxa_hinge3">
+      <pose>0.000000 0.0000000 0.000000 0 0 0</pose>
+      <child>coxa3</child>
+      <parent>chassis</parent>
+      <axis>
+        <xyz>0.000000 0.000000 1.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="coxa_3_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="femur3">
+      <pose>-0.140000 0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </visual>
+    </link>
+
+    <joint type="revolute" name="femur_hinge3">
+      <pose>0.030000 0.000000 0.000000 0 0 0</pose>
+      <child>femur3</child>
+      <parent>coxa3</parent>
+      <axis>
+        <xyz>0.000000 -1.000000 0.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="femur_3_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="tibia3">
+      <pose>-0.200000 0.095000 0.411000 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <mass>0.067000</mass>
+        <inertia>
+          <ixx>0.000965</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000965</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000965</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><box><size>0.0350000 0.035000 0.030000</size></box></geometry>
+
+      </collision>
+      <visual name="visual">
+        <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
+
+      </visual>
+   </link>
+
+    <joint type="revolute" name="tibia_hinge3">
+      <pose>0.030000 0.000000 0.000000 0 0 0</pose>
+      <child>tibia3</child>
+      <parent>femur3</parent>
+      <axis>
+        <xyz>0.000000 -1.000000 0.000000</xyz>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+        <limit>
+          <!--effort>1.200000</effort-->
+          <velocity>3.0</velocity>
+        </limit>
+      </axis>
+      <sensor name="tibia_3_torque" type="force_torque">
+        <real_time_update_rate>30</real_time_update_rate>
+      </sensor>
+    </joint>
+
+    <link name="tip3">
+      <pose>-0.230000 0.095000 0.411000 0 0 0</pose>
+      <inertial>
+        <mass>0.020000</mass>
+        <inertia>
+          <ixx>0.000002</ixx>
+          <ixy>0.00</ixy>
+          <ixz>0.00</ixz>
+          <iyy>0.000002</iyy>
+          <iyz>0.00</iyz>
+          <izz>0.000002</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry><sphere><radius>0.01500</radius></sphere></geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>3</mu>
+              <mu2>3</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <geometry><sphere><radius>0.01500</radius></sphere></geometry>
+      </visual>
+    </link>
+
+    <joint type="revolute" name="tip_hinge3">
+      <pose>0.000000 0.000000 0.000000 0 0 0</pose>
+      <child>tip3</child>
+      <parent>tibia3</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+        <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
+      </axis>
+    </joint>
+
+  </model>
+ </world>
+</sdf>

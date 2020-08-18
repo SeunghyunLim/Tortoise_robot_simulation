@@ -41,7 +41,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://chassis.stl</uri></mesh>
+          <mesh><uri>file://tortoise/chassis.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -71,7 +71,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://belly.stl</uri></mesh>
+          <mesh><uri>file://tortoise/belly.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -105,7 +105,7 @@
       </inertial>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://coxa.stl</uri></mesh>
+          <mesh><uri>file://tortoise/coxa.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -144,7 +144,7 @@
       </collision-->
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://femur.stl</uri></mesh>
+          <mesh><uri>file://tortoise/femur.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -179,7 +179,7 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <mesh><uri>file://tibia.stl</uri></mesh>
+          <mesh><uri>file://tortoise/tibia.stl</uri></mesh>
         </geometry>
         <surface>
           <friction>
@@ -192,7 +192,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://tibia.stl</uri></mesh>
+          <mesh><uri>file://tortoise/tibia.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -229,7 +229,7 @@
       </inertial>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://coxa.stl</uri></mesh>
+          <mesh><uri>file://tortoise/coxa.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -268,7 +268,7 @@
       </collision-->
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://femur.stl</uri></mesh>
+          <mesh><uri>file://tortoise/femur.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -303,7 +303,7 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <mesh><uri>file://tibia.stl</uri></mesh>
+          <mesh><uri>file://tortoise/tibia.stl</uri></mesh>
         </geometry>
         <friction>
           <ode>
@@ -314,7 +314,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://tibia.stl</uri></mesh>
+          <mesh><uri>file://tortoise/tibia.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -351,7 +351,7 @@
       </inertial>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://coxa.stl</uri></mesh>
+          <mesh><uri>file://tortoise/coxa.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -390,7 +390,7 @@
       </collision-->
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://femur.stl</uri></mesh>
+          <mesh><uri>file://tortoise/femur.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -425,12 +425,12 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <mesh><uri>file://tibia.stl</uri></mesh>
+          <mesh><uri>file://tortoise/tibia.stl</uri></mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://tibia.stl</uri></mesh>
+          <mesh><uri>file://tortoise/tibia.stl</uri></mesh>
         </geometry>
         <friction>
           <ode>
@@ -472,7 +472,7 @@
       </inertial>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://coxa.stl</uri></mesh>
+          <mesh><uri>file://tortoise/coxa.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -511,7 +511,7 @@
       </collision-->
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://femur.stl</uri></mesh>
+          <mesh><uri>file://tortoise/femur.stl</uri></mesh>
         </geometry>
       </visual>
     </link>
@@ -546,7 +546,7 @@
       </inertial>
       <collision name="collision">
         <geometry>
-          <mesh><uri>file://tibia.stl</uri></mesh>
+          <mesh><uri>file://tortoise/tibia.stl</uri></mesh>
         </geometry>
         <friction>
           <ode>
@@ -557,7 +557,7 @@
       </collision>
       <visual name="visual">
         <geometry>
-          <mesh><uri>file://tibia.stl</uri></mesh>
+          <mesh><uri>file://tortoise/tibia.stl</uri></mesh>
         </geometry>
       </visual>
     </link>

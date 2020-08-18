@@ -26,7 +26,7 @@
     <link name="chassis">
       <pose>0 0 0.00000 1.57 0 1.57</pose>
       <inertial>
-        <mass>1.050000</mass>
+        <mass>0.456000</mass>
         <inertia>
           <ixx>0.015162</ixx>
           <ixy>0.00</ixy>
@@ -48,7 +48,7 @@
     <link name="belly">
       <pose>0.000000 0.000000 -0.0380000 1.57 0.000000 1.57</pose>
       <inertial>
-        <mass>0.100000</mass>
+        <mass>0.001000</mass>
         <inertia>
           <ixx>0.000160</ixx>
           <ixy>0.00</ixy>
@@ -93,7 +93,7 @@
     <link name="coxa0">
       <pose>0.0950000 -0.117500 0.01800 1.57000 000000 1.57000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.0722</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -117,7 +117,7 @@
         <xyz>0.000000 1.000000 0.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -128,7 +128,7 @@
     <link name="femur0">
       <pose>0.0950000 -0.185 0.018000 1.570000 00000 1.570000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.074000</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -156,7 +156,7 @@
         <xyz>0.000000 0.000000 1.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -167,7 +167,7 @@
     <link name="tibia0">
       <pose>0.0950000 -0.18500 0.018000 1.570000 1.570000 1.570000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.018000</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -204,7 +204,7 @@
         <xyz>0.000000 0.000000 1.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -217,7 +217,7 @@
     <link name="coxa1">
       <pose>-0.0950000 -0.117500 0.01800 1.57000 000000 1.57000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.072200</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -241,7 +241,7 @@
         <xyz>0.000000 1.000000 0.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -252,7 +252,7 @@
     <link name="femur1">
       <pose>-0.0950000 -0.185 0.018000 1.570000 00000 1.570000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.074000</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -280,7 +280,7 @@
         <xyz>0.000000 0.000000 1.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -291,7 +291,7 @@
     <link name="tibia1">
       <pose>-0.0950000 -0.18500 0.018000 1.570000 1.570000 1.570000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.018000</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -326,7 +326,7 @@
         <xyz>0.000000 0.000000 1.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -339,7 +339,7 @@
     <link name="coxa2">
       <pose>-0.0950000 0.117500 0.01800 1.57000 3.1400000 1.57000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.072200</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -363,7 +363,7 @@
         <xyz>0.000000 -1.000000 0.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -374,7 +374,7 @@
     <link name="femur2">
       <pose>-0.0950000 0.185 0.018000 1.570000 3.140000 1.570000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.074000</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -402,7 +402,7 @@
         <xyz>0.000000 0.000000 -1.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -413,7 +413,7 @@
     <link name="tibia2">
       <pose>-0.0950000 0.18500 0.018000 1.570000 -1.570000 1.570000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.018000</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -448,7 +448,7 @@
         <xyz>0.000000 0.000000 -1.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -460,7 +460,7 @@
     <link name="coxa3">
       <pose>0.0950000 0.117500 0.01800 1.57000 3.1400000 1.57000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.072200</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -484,7 +484,7 @@
         <xyz>0.000000 -1.000000 0.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -495,7 +495,7 @@
     <link name="femur3">
       <pose>0.0950000 0.185 0.018000 1.570000 3.140000 1.570000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.074000</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -523,7 +523,7 @@
         <xyz>0.000000 0.000000 -1.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>
@@ -534,7 +534,7 @@
     <link name="tibia3">
       <pose>0.0950000 0.18500 0.018000 1.570000 -1.570000 1.570000</pose>
       <inertial>
-        <mass>0.067000</mass>
+        <mass>0.018000</mass>
         <inertia>
           <ixx>0.000965</ixx>
           <ixy>0.00</ixy>
@@ -569,7 +569,7 @@
         <xyz>0.000000 0.000000 -1.000000</xyz>
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
-          <!--effort>1.200000</effort-->
+          <effort>1.500000</effort>
           <velocity>3.0</velocity>
         </limit>
       </axis>

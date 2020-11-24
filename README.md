@@ -6,15 +6,15 @@ This is a personalized version of 'Legtool'(by jpieper) for analyzing the gait o
 Overall methods such as inverse kinematics, UI, etc. are from opensource toolkit __legtool__, which is from https://github.com/jpieper/legtool. 
 
 
-- In folder [tortoise](https://github.com/SeunghyunLim/legtool_tortoise_robot/tree/master/tortoise), I made _tortoise.world_ which has sdf formatted tortoise robot model and some settings of environments, physics, sensors. 
+- In folder [tortoise](https://github.com/SeunghyunLim/Tortoise_robot_simulation/tree/master/tortoise), I made _tortoise.world_ which has sdf formatted tortoise robot model and some settings of environments, physics, sensors. 
 - The _stl_ files were designed with Inventor 2021, and joints of the robot are composed of 12 _Dynamixel AX-12A_.
 
 
-<center><img src="https://github.com/SeunghyunLim/legtool_tortoise_robot/blob/master/img/tortoise_like_robot_gazebo.png" alt="drawing"></center>
+<center><img src="https://github.com/SeunghyunLim/Tortoise_robot_simulation/blob/master/img/tortoise_like_robot_gazebo.png" alt="drawing"></center>
 
 | __Triangular__ gait | __Diagonal__ gait |
 |---|---|
-|![a](https://github.com/SeunghyunLim/legtool_tortoise_robot/blob/master/gif/triangular_example.gif)|![a](https://github.com/SeunghyunLim/legtool_tortoise_robot/blob/master/gif/diagonal_example.gif)|
+|![a](https://github.com/SeunghyunLim/Tortoise_robot_simulation/blob/master/gif/triangular_example.gif)|![a](https://github.com/SeunghyunLim/Tortoise_robot_simulation/blob/master/gif/diagonal_example.gif)|
 
 
 ## Features
@@ -29,7 +29,7 @@ Overall methods such as inverse kinematics, UI, etc. are from opensource toolkit
 
 | Totrque from __Crawl-Triangular__ gait | Totrque from __Crawl-Diagonal__ gait |
 |---|---|
-|![a](https://github.com/SeunghyunLim/legtool_tortoise_robot/blob/master/gif/crawl_triangular.gif)|![a](https://github.com/SeunghyunLim/legtool_tortoise_robot/blob/master/gif/crawl_diagonal.gif)|
+|![a](https://github.com/SeunghyunLim/Tortoise_robot_simulation/blob/master/gif/crawl_triangular.gif)|![a](https://github.com/SeunghyunLim/Tortoise_robot_simulation/blob/master/gif/crawl_diagonal.gif)|
 
 
 ## Dependencies

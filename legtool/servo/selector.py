@@ -14,6 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import rospy
+from std_msgs.msg import String
+from rospy_message_converter import message_converter
+
+
 import trollius as asyncio
 from trollius import From, Return
 import math
@@ -146,6 +151,9 @@ class GazeboController(object):
             (key, model_name + '::' + value)
             for key, value in servo_name_map.iteritems())
 
+        self.pub = rospy.Publisher('cmd', String, queue_size=1)
+        rospy.init_node('talker')
+
     @asyncio.coroutine
     def start(self):
         model_name = self.model_name
@@ -155,6 +163,8 @@ class GazeboController(object):
         self.publisher = yield From(self.manager.advertise(
             '/gazebo/default/%s/joint_cmd' % model_name,
             'gazebo.msgs.JointCmd'))
+
+
 
         yield From(self.publisher.wait_for_listener())
 
@@ -182,7 +192,6 @@ class GazeboController(object):
         if (not joint_cmd.HasField('position') or
             not joint_cmd.position.HasField('target')):
             return
-
         self._servo_angles[index] = joint_cmd.position.target
 
     @asyncio.coroutine
@@ -192,6 +201,13 @@ class GazeboController(object):
             self.joint_cmd.position.target = math.radians(angle)
             yield From(self.publisher.publish(self.joint_cmd))
             self._servo_angles[ident] = angle
+        message = str(self._servo_angles)
+        #message = message_converter.convert_dictionary_to_ros_message('std_msgs/String', self._servo_angles)
+        self.pub.publish(String(message))
+        print(message)
+        #print(self._servo_angles)
+
+
 
     @asyncio.coroutine
     def get_pose(self, idents=[]):

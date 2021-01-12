@@ -16,7 +16,6 @@
 
 import rospy
 from std_msgs.msg import String
-from rospy_message_converter import message_converter
 
 
 import trollius as asyncio

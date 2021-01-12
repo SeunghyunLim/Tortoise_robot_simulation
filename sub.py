@@ -1,15 +1,27 @@
-from pygazebo.msg.gz_string_pb2 import GzString
-import eventlet
-import pygazebo
+import rospy
+import re
+from std_msgs.msg import String
 
 def callback(data):
-    message = GzString.FromString(data)
-    print('got message %s' % message.data[:4])
+    data = str(data)
+    data = data.replace("data: ", "")
+    data = data.replace("\\", "")
+    data = data.replace("\n", "")
+    data = data.replace("  ", "")
+    test = re.split(', |"{|: |}"', data)
+    test.pop(0)
+    test.pop()
+    test = [float(i) for i in test]
+    print(test)
 
-topic='/gazebo/default/test/request'
-manager = pygazebo.Manager(('localhost', 11345))
-manager.start()
-sub = manager.subscribe(topic, 'gazebo.msgs.GzString', callback)
+def listener():
+    rospy.init_node('Listener', anonymous=True)
+    rospy.Subscriber("/cmd", String, callback)
+    rospy.spin()
 
-while True:
-  eventlet.sleep(1)
+if __name__ == "__main__":
+	try:
+		listener()
+
+	except KeyboardInterrupt:
+		print("Interrupted by keyboard")

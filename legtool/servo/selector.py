@@ -203,7 +203,7 @@ class GazeboController(object):
         message = str(self._servo_angles)
         #message = message_converter.convert_dictionary_to_ros_message('std_msgs/String', self._servo_angles)
         self.pub.publish(String(message))
-        print(message)
+        #print(message)
         #print(self._servo_angles)
 
 

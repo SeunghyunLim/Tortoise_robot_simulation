@@ -26,7 +26,7 @@
     <link name="chassis">
       <pose>0 0 0.00000 1.57 0 1.57</pose>
       <inertial>
-        <mass>0.456000</mass>
+        <mass>0.568800</mass>
         <inertia>
           <ixx>0.015162</ixx>
           <ixy>0.00</ixy>
@@ -84,7 +84,7 @@
         <dynamics><damping>0.1</damping><friction>0.001</friction></dynamics>
         <limit>
           <effort>1.200000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
     </joint>
@@ -118,7 +118,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="coxa_0_torque" type="force_torque">
@@ -157,7 +157,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="femur_0_torque" type="force_torque">
@@ -205,7 +205,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="tibia_0_torque" type="force_torque">
@@ -242,7 +242,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="coxa_1_torque" type="force_torque">
@@ -281,7 +281,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="femur_1_torque" type="force_torque">
@@ -327,7 +327,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="tibia_1_torque" type="force_torque">
@@ -364,7 +364,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="coxa_2_torque" type="force_torque">
@@ -403,7 +403,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="femur_2_torque" type="force_torque">
@@ -449,7 +449,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="tibia_2_torque" type="force_torque">
@@ -485,7 +485,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="coxa_3_torque" type="force_torque">
@@ -524,7 +524,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="femur_3_torque" type="force_torque">
@@ -570,7 +570,7 @@
         <dynamics><damping>0.1</damping><friction>0.1</friction></dynamics>
         <limit>
           <effort>1.500000</effort>
-          <velocity>3.0</velocity>
+          <velocity>6.1785</velocity>
         </limit>
       </axis>
       <sensor name="tibia_3_torque" type="force_torque">

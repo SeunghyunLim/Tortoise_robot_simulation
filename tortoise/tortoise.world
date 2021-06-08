@@ -103,10 +103,16 @@
           <izz>0.000965</izz>
         </inertia>
       </inertial>
-      <visual name="visual">
+      <visual name="coxa0_visual">
         <geometry>
           <mesh><uri>file://tortoise/coxa.stl</uri></mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint type="revolute" name="coxa_hinge0">
@@ -142,10 +148,16 @@
         <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
 
       </collision-->
-      <visual name="visual">
+      <visual name="femur0_visual">
         <geometry>
           <mesh><uri>file://tortoise/femur.stl</uri></mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint type="revolute" name="femur_hinge0">
@@ -227,10 +239,16 @@
           <izz>0.000965</izz>
         </inertia>
       </inertial>
-      <visual name="visual">
+      <visual name="coxa1_visual">
         <geometry>
           <mesh><uri>file://tortoise/coxa.stl</uri></mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint type="revolute" name="coxa_hinge1">
@@ -266,10 +284,16 @@
         <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
 
       </collision-->
-      <visual name="visual">
+      <visual name="femur1_visual">
         <geometry>
           <mesh><uri>file://tortoise/femur.stl</uri></mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint type="revolute" name="femur_hinge1">
@@ -349,10 +373,16 @@
           <izz>0.000965</izz>
         </inertia>
       </inertial>
-      <visual name="visual">
+      <visual name="coxa2_visual">
         <geometry>
           <mesh><uri>file://tortoise/coxa.stl</uri></mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint type="revolute" name="coxa_hinge2">
@@ -388,10 +418,16 @@
         <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
 
       </collision-->
-      <visual name="visual">
+      <visual name="femur2_visual">
         <geometry>
           <mesh><uri>file://tortoise/femur.stl</uri></mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint type="revolute" name="femur_hinge2">
@@ -470,10 +506,16 @@
           <izz>0.000965</izz>
         </inertia>
       </inertial>
-      <visual name="visual">
+      <visual name="coxa3_visual">
         <geometry>
           <mesh><uri>file://tortoise/coxa.stl</uri></mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint type="revolute" name="coxa_hinge3">
@@ -509,10 +551,16 @@
         <geometry><box><size>0.060000 0.035000 0.030000</size></box></geometry>
 
       </collision-->
-      <visual name="visual">
+      <visual name="femur3_visual">
         <geometry>
           <mesh><uri>file://tortoise/femur.stl</uri></mesh>
         </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.3 0.3 0.3 1</diffuse>
+          <specular>0 0 0 0</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
       </visual>
     </link>
     <joint type="revolute" name="femur_hinge3">
